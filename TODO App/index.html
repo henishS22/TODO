@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>To DO list</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="styles/index.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <p>
+          <label for="new-task">Add Item</label>
+          <input id="new-task" type="text" placeholder="Enter Task here..">
+          <!-- <input id="sub-task" type="text" placeholder="Enter Sub Task here..(If any)"><br> -->
+          <br><br><br>
+          <b> Priority : </b>
+          <select id="taskprior" onchange="addPrior(event)">
+            <option> --select Priority-- </option>  
+            <option value="high"> High </option>
+            <option value="medium"> Medium </option>
+            <option value="low"> Low </option>
+          </select> <br>
+          <!-- <input id="priority" type="text" placeholder="Enter Priority"> -->
+          <button id="add">Add</button>
+          <button id="clear">Clear</button>
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <p>
+          <label for="search-task">Search Item</label>
+          <input id="search-task" type="text" placeholder="Search here..">
+
+          <br><br><br>
+          <b> Search By : </b>
+          <select id="myList" onchange="searchBy(event)">
+            <option> --Choose Category-- </option>  
+            <option value="all"> All </option>
+            <option value="task"> Task </option>
+            <option value="priority"> Priority </option>
+          </select>
+
+        <div style="border-bottom: 2px solid black;margin-top:5px;margin-bottom: 10px;"></div>
+        <!-- <button id="history">History</button> -->
+
+        <div class="container-fluid">
+
+          <!-- this is the part where we create a button for creating the modal -->
+          <button type="button" id="history" class="btn btn-primary xyz" data-toggle="modal" data-target="#mymodal">
+            History
+          </button>
+
+          <!-- here is the modal -->
+
+          <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">History</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal"> Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <h3 id="todo">Todo</h3>
+        <div class="incomp-forDrag" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <ul id="incomplete-tasks"></ul>
+
+        </div>
+
+      </div>
+      <div class="col-lg-4">
+        <h3 id="inprog">In-Progress</h3>
+        <div class="inprog-forDrag" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <ul id="inprogress-tasks"></ul>
+
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <h3 id="complete">Completed</h3>
+        <div class="comp-forDrag" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <ul id="completed-tasks">
+          <!-- <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+
+</html>
