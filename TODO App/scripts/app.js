@@ -34,17 +34,17 @@ function addTask() {
   let priorVal = addPriority;
   const li = document.createElement('div');
   idMaker++;
-  li.innerHTML = `<li id=${idMaker} ondrag="drag_handler(event);" ondragstart="dragstart_handler(event);" draggable="true"><h5 id="jen">${taskInp}</h5>
+  li.innerHTML = `<li id=${idMaker} ondrag="drag_handler(event);" ondragstart="dragstart_handler(event);" draggable="true"><h5 id="jen" style="margin-left:20px;">${taskInp}</h5>
   <span id="prior" style="display:none">${priorVal}</span>
   <div class="divbrn">
-        <button id="delete${idMaker}" style="float:right;">Delete</button>
-        <button id="edit${idMaker}" style="float: right;">Edit</button>
+        <button id="delete${idMaker}" style="float:right;color:black;">Delete</button>
+        <button id="edit${idMaker}" style="float: right;color:black;">Edit</button>
     </div><br><br>
   </li>`;
 
-  if (priorVal == 'high') { li.style.backgroundColor = 'yellow'; }
-  else if (priorVal == 'medium') { li.style.backgroundColor = 'cyan'; }
-  else { li.style.backgroundColor = 'cornsilk'; }
+  if (priorVal == 'high') { li.style.backgroundColor = '#ff8566'; }
+  else if (priorVal == 'medium') { li.style.backgroundColor = '#ffad99'; }
+  else { li.style.backgroundColor = '#ffd6cc'; }
 
   todoDiv.appendChild(li);
   todoArr.push({ _id: idMaker, task: taskInp, priority: priorVal });
@@ -59,17 +59,17 @@ function addTask() {
 function addTaskfromstorage(task, id, priorVal, status) {
   let taskInpfromStorage = task;
   const li = document.createElement('div');
-  li.innerHTML = `<li id=${id} ondrag="drag_handler(event);" ondragstart="dragstart_handler(event);" draggable="true"><h5 id="jen">${taskInpfromStorage}</h5>
+  li.innerHTML = `<li id=${id} ondrag="drag_handler(event);" ondragstart="dragstart_handler(event);" draggable="true"><h5 id="jen" style="margin-left:20px;">${taskInpfromStorage}</h5>
   <span id="prior" style="display:none">${priorVal}</span>
                   <div class="divbrn">
-                        <button id="delete${id}" style="float:right;">Delete</button>
-                        <button id="edit${id}" style="float: right;">Edit</button>
+                        <button id="delete${id}" style="float:right;color:black;">Delete</button>
+                        <button id="edit${id}" style="float: right;color:black;">Edit</button>
                     </div><br><br>
                   </li>`;
 
-  if (priorVal == 'high') { li.style.backgroundColor = 'yellow'; }
-  else if (priorVal == 'medium') { li.style.backgroundColor = 'cyan'; }
-  else { li.style.backgroundColor = 'cornsilk'; }
+  if (priorVal == 'high') { li.style.backgroundColor = '#ff5c33'; }
+  else if (priorVal == 'medium') { li.style.backgroundColor = '#ffad99'; }
+  else { li.style.backgroundColor = '#ffd6cc'; }
   if (status === 'todo') {
     todoDiv.appendChild(li);
   } else if (status === 'inprogress') {
@@ -201,9 +201,9 @@ function drop(ev) {
 
   const temp = Arrr.find(item => item._id == parseInt(elId));
 
-  if (temp.priority == 'high') { el.style.backgroundColor = 'yellow'; }
-  else if (temp.priority == 'medium') { el.style.backgroundColor = 'cyan'; }
-  else { el.style.backgroundColor = 'cornsilk'; }
+  if (temp.priority == 'high') { el.style.backgroundColor = '#ff8566'; }
+  else if (temp.priority == 'medium') { el.style.backgroundColor = '#ffad99'; }
+  else { el.style.backgroundColor = '#ffd6cc'; }
   ev.target.appendChild(el);
 
   console.log(ev.target);

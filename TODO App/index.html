@@ -25,12 +25,10 @@
           <br><br><br>
           <b> Priority : </b>
           <select id="taskprior" onchange="addPrior(event)">
-            <!-- <option> --select Priority-- </option>   -->
             <option value="high"> High </option>
             <option value="medium"> Medium </option>
             <option value="low"> Low </option>
           </select> <br>
-          <!-- <input id="priority" type="text" placeholder="Enter Priority"> -->
           <button id="add">Add</button>
           <button id="clear">Clear</button>
         </p>
@@ -44,14 +42,12 @@
           <br><br><br>
           <b> Search By : </b>
           <select id="myList" onchange="searchBy(event)">
-            <!-- <option> --Choose Category-- </option>   -->
             <option value="all"> All </option>
             <option value="task"> Task </option>
             <option value="priority"> Priority </option>
           </select>
 
         <div style="border-bottom: 2px solid black;margin-top:5px;margin-bottom: 10px;"></div>
-        <!-- <button id="history">History</button> -->
 
         <div class="container-fluid">
 
@@ -109,7 +105,6 @@
         <h3 id="complete">Completed</h3>
         <div class="comp-forDrag" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <ul id="completed-tasks">
-          <!-- <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li> -->
         </ul>
       </div>
     </div>
