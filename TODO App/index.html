@@ -25,7 +25,7 @@
           <br><br><br>
           <b> Priority : </b>
           <select id="taskprior" onchange="addPrior(event)">
-            <option> --select Priority-- </option>  
+            <!-- <option> --select Priority-- </option>   -->
             <option value="high"> High </option>
             <option value="medium"> Medium </option>
             <option value="low"> Low </option>
@@ -44,7 +44,7 @@
           <br><br><br>
           <b> Search By : </b>
           <select id="myList" onchange="searchBy(event)">
-            <option> --Choose Category-- </option>  
+            <!-- <option> --Choose Category-- </option>   -->
             <option value="all"> All </option>
             <option value="task"> Task </option>
             <option value="priority"> Priority </option>
@@ -70,7 +70,7 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-
+                  <p id="printLog"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal"> Close</button>
